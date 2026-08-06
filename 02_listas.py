@@ -24,3 +24,20 @@ print("Hemograma" in servicios)
 # reemplazar / sobreescribir
 servicios[1] = "Otro"
 print(servicios)
+
+
+### Listas de números ###
+
+precios = [2,5,9,10,1,-3]
+
+# sumar sum()
+print(sum(precios))
+
+# el más caro / mayor max()
+print(max(precios))
+
+# el más barato / menor
+print(min(precios))
+
+# odenados de menor a mayor sorted()
+print(sorted(precios))
