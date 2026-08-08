@@ -1,14 +1,23 @@
-diccionario = {"1":"Opción 1", "2":"Opción 2", "3":"Opción 3", "4":"Opción 4"}
+menu = {"1":"Agregar persona", "2":"Agregar datos", "3":"Mostrar IMC", "4":"Salir"}
 
-# print(diccionario)
+while True:
 
-for opcion in diccionario.values():
-    print(opcion)
+    print("="*10, " M E N Ú ", "="*10)
 
-eleccion = input("Marca un número")
+    for numero, texto in menu.items():
+        print(numero, texto)
 
-if eleccion == 1:
-    print(diccionario.values([eleccion]))
+    eleccion = input("Marca un número: ")
 
-else:
-    print("Opción no válida")
+    if eleccion == "4":
+        print("VUELVE PRONTO")
+        break
+
+    elif eleccion in menu:
+        print(menu[eleccion])
+
+    else:
+        print("Opción no válida")
+
+    print("="*31)
+    print("="*31)
