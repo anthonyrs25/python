@@ -69,13 +69,17 @@ while True:
         while not cedulaValida(cedula):
             cedula = input("Ingresa una cédula válida: ")
         if cedula in personas:
-            print(personas[cedula]["nombre"])
-            print("El Índice de Masa Corporal de ", personas[cedula]["nombre"], " es: ")
-            resultado = calcularIMC(personas[cedula]["peso"],personas[cedula]["estatura"])
-            print(resultado)
+            if "peso" in personas[cedula] and "estatura" in personas[cedula]:
+                print(personas[cedula]["nombre"],personas[cedula]["peso"],personas[cedula]["estatura"])
+                print("El Índice de Masa Corporal de ", personas[cedula]["nombre"], " es: ")
+                resultado = calcularIMC(personas[cedula]["peso"],personas[cedula]["estatura"])
+                print(resultado)
+            else:
+                print("="*30)
+                print("Agrega el peso y estatura en la Opción 2")
         else:
             print("="*30)
-            print("Primero registra a la persona en la Opción 1")
+            print("La persona no está registrada. Agrega la persona en la Opción 1")
 
     else:
         print("Opción no válida")
