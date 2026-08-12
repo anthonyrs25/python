@@ -50,15 +50,26 @@ while True:
             while not cedulaValida(cedula):
                 cedula = input("Ingresa una cédula válida: ")
             if cedula in personas:
-              print(personas[cedula]["nombre"])
-              print("Agregue los datos: ")
-              peso = float(input("Peso en kilogramos: "))
-              estatura = float(input("Estatura en metros: "))
-              print(personas[cedula])
-              personas[cedula]["peso"] = peso
-              personas[cedula]["estatura"] = estatura
-              print(personas[cedula])
-             
+                print(personas[cedula]["nombre"])
+                print("Agregue los datos: ")
+                while True:
+                    try:
+                        peso = float(input("Peso en kilogramos: ").replace(",","."))
+                        break
+                    except ValueError:
+                        print("Ingresa un valor numérico")
+                while True:
+                    try:
+                        estatura = float(input("Estatura en metros: ").replace(",","."))
+                        break
+                    except ValueError:
+                        print("Ingresa un valor numérico")
+
+                print(personas[cedula])
+                personas[cedula]["peso"] = peso
+                personas[cedula]["estatura"] = estatura
+                print(personas[cedula])
+
             else:
                 print("="*30)
                 print("Primero registra a la persona en la Opción 1")
