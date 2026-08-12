@@ -14,7 +14,13 @@ def cedulaValida(cedula):
 def calcularIMC(peso, estatura):
     return round(peso / (estatura ** 2), 2)
 
-
+def numeroValido(cantidad):
+    while True:
+        try:
+            valores = float(input(cantidad).replace(",","."))
+            return valores
+        except ValueError:
+            print("Ingresa un valor numérico")
 
 salir = False 
 
@@ -54,19 +60,8 @@ while True:
             if cedula in personas:
                 print(personas[cedula]["nombre"])
                 print("Agregue los datos: ")
-                while True:
-                    try:
-                        peso = float(input("Peso en kilogramos: ").replace(",","."))
-                        break
-                    except ValueError:
-                        print("Ingresa un valor numérico")
-                while True:
-                    try:
-                        estatura = float(input("Estatura en metros: ").replace(",","."))
-                        break
-                    except ValueError:
-                        print("Ingresa un valor numérico")
-
+                peso = numeroValido("Peso en kilogramos: ")
+                estatura = numeroValido("Estatura en metros: ")
                 print(personas[cedula])
                 personas[cedula]["peso"] = peso
                 personas[cedula]["estatura"] = estatura
