@@ -14,6 +14,8 @@ def cedulaValida(cedula):
 def calcularIMC(peso, estatura):
     return round(peso / (estatura ** 2), 2)
 
+
+
 salir = False 
 
 while True:
